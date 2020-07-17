@@ -10,7 +10,7 @@ class QualsysCourses(models.Model):
     @api.depends('attendees_ids')
     def get_attendees_number(self):
         for data in self:
-            data.courses_number = len(data.attendees_ids)
+            data.attendees_number = len(data.attendees_ids)
 
     name = fields.Char(string="Curso", required=True)
     code = fields.Char(string="Codigo", required=True)
@@ -20,7 +20,7 @@ class QualsysCourses(models.Model):
     school_id = fields.Many2one('qualsys.school', string="Escuela")
     teacher_id = fields.Many2one('res.users', string="Profesor")
     attendees_ids = fields.One2many('qualsys.attendees', 'courses_id', string = "Asistentes", required=True)
-    attendees_number = fields.Integer(computed=get_attendees_number, string="Cantidad de Asistentes")
+    attendees_number = fields.Integer(compute=get_attendees_number, string="Cantidad de Asistentes")
 
 
     

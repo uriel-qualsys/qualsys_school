@@ -7,6 +7,7 @@ from odoo import models, fields, api
 class QualsysSchool(models.Model):
     _name = 'qualsys.school'
     _description = 'Escuela de Prueba'
+    
 
     @api.depends('courses_ids')
     def get_courses_number(self):
