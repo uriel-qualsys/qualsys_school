@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="qualsys_school_view_form" model="ir.ui.view">
+            <field name="name">qualsys.school.view.form</field>
+            <field name="model">qualsys.school</field>
+            <field name="arch" type="xml">
+                <form string="Escuelas Qualsys">
+                    <header>
+                        <group>
+                            <h3>Escuelas Qualsys</h3>
+                        </group>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" default_focus="1" placeholder="Escuela"/>
+                            </h1>
+                        </div>
+                        <group> 
+                            <group>
+                                <p><b>Domicilio</b></p>
+                                <field name="street"/>
+                                <field name="street_number"/>
+                                <field name="city"/>
+                                <field name="country"/>
+                                <field name="state"/>
+                            </group>
+                            <group>
+                                <p></p>
+                                <field name="phone_one"/>
+                                <field name="phone_two"/>
+                                <field name="email"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Cursos">
+                                <field name="courses_ids">
+                                    <tree>
+                                        
+                                        <field name="name" />
+                                        <field name="code" />
+                                        <field name="start_date" />
+                                        <field name="end_date" />
+                                        <field name="duration" />
+                                        <field name="attendees_number" />
+                                        
+                                    </tree>
+                                    <form>
+                                        <sheet>
+                                            <group>
+                                                <field name="name" />
+                                                <field name="code" />
+                                                <field name="start_date" />
+                                                <field name="end_date" />
+                                                <field name="duration" />
+                                            </group>
+                                        </sheet>
+                                    </form>
+                                </field>                              
+                            </page>
+                        </notebook>
+                    </sheet> 
+                </form>
+            </field>
+        </record>
+
+        <record id="qualsys_school_view_tree" model="ir.ui.view">
+            <field name="name">qualsys.school.view.tree</field>
+            <field name="model">qualsys.school</field>
+            <field name="arch" type="xml">
+                <tree string="Escuelas Qualsys">
+                    <field name="name" />
+                    <field name="city" />
+                    <field name="courses_number"/>
+                </tree>
+            </field>
+        </record>
+
+        <menuitem id="qualsys_school_root" name="Escuela Qualsys" sequence="100"/>
+        <act_window id="qualsys_school_action" name="Escuela Qualsys" res_model="qualsys.school" view_mode="tree,form"/>   
+        <menuitem id="qualsys_school_menu" name="Escuelas" action="qualsys_school_action" parent="qualsys_school_root"/>
+    </data>
+</odoo>
+
+
