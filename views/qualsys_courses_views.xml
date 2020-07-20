@@ -7,14 +7,13 @@
             <field name="arch" type="xml">
                 <form string="Cursos Qualsys">
                     <header>
-                        <group>
-                            <h3>Cursos Qualsys</h3>
-                        </group>
+                        <button name="%(qualsys_assign_school)d" string="Asignar Escuela" type="action" class="oe_highlight"></button>
                     </header>
                     <sheet>
                         <group>
+                            <h2><field name="name" /></h2>
                             <field name="code" />
-                            <field name="name" />
+                            <field name="school_id" />
                             <field name="start_date" />
                             <field name="end_date" />
                             <field name="duration" />

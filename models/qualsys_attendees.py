@@ -18,6 +18,8 @@ class QualsysAttendees(models.Model):
     courses_id = fields.Many2one('qualsys.courses', string="Curso")
 
 
-
+    """
+    *Nota: reeescribir el modelo herando de res.partner y agregar el notebook cursos a la vista
+    """"
 
 

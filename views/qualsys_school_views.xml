@@ -7,9 +7,7 @@
             <field name="arch" type="xml">
                 <form string="Escuelas Qualsys">
                     <header>
-                        <group>
-                            <h3>Escuelas Qualsys</h3>
-                        </group>
+                        
                     </header>
                     <sheet>
                         <div class="oe_title">
